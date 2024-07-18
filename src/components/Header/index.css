@@ -1,0 +1,73 @@
+.nav-container {
+  background-color: #272727;
+  height: 70px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 578px) {
+  .router-heading-names {
+    display: none;
+  }
+
+  .logout-btn-container {
+    display: none;
+  }
+  .react-icons-container {
+    display: flex;
+    gap: 18px;
+  }
+}
+@media screen and (min-width: 579px) {
+  .router-heading-names {
+    display: flex;
+    gap: 10px;
+  }
+  .logout-btn-container {
+    display: block;
+  }
+  .react-icons-container {
+    display: none;
+  }
+  .nav-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.logo {
+  width: 100px;
+}
+.icon {
+  color: #fff;
+  height: 60px;
+  font-size: 26px;
+  cursor: pointer;
+}
+.name {
+  cursor: pointer;
+  font-family: 'roboto';
+  color: #fff;
+  font-size: 18px;
+}
+.logout-button {
+  background-color: #6366f1;
+  color: #fff;
+  font-family: 'roboto';
+  cursor: pointer;
+  outline: none;
+  width: 80px;
+  padding: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.link-item {
+  text-decoration: none;
+  outline: none;
+}
