@@ -1,11 +1,8 @@
 import {Link, withRouter} from 'react-router-dom'
-
 import Cookies from 'js-cookie'
-
-import {IoIosHome} from 'react-icons/io'
-import {MdMail} from 'react-icons/md'
 import {FiLogOut} from 'react-icons/fi'
-
+import {AiFillHome} from 'react-icons/ai'
+import {BsFillBriefcaseFill} from 'react-icons/bs'
 import './index.css'
 
 const Header = props => {
@@ -15,52 +12,76 @@ const Header = props => {
     history.replace('/login')
   }
   return (
-    <navbar className="navbar">
-      <div className="nav-container">
-        <Link to="/">
-          <div>
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-              alt="website logo"
-              className="logo"
-            />
+    <>
+      <nav className="nav-header">
+        <div className="nav-content">
+          <div className="nav-bar-mobile-container">
+            <Link to="/">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/logo-img.png "
+                className="website-logo"
+                alt="website logo"
+              />
+            </Link>
+            <ul className="nav-bar-mobile-icons-container">
+              <li>
+                <Link to="/">
+                  <AiFillHome className="nav-item-mobile-link" />
+                </Link>
+              </li>
+              <li>
+                <Link to="/jobs">
+                  <BsFillBriefcaseFill className="nav-item-mobile-link" />
+                </Link>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className="nav-mobile-btn"
+                  onClick={onClickLogout}
+                >
+                  Click
+                  <FiLogOut />
+                </button>
+              </li>
+            </ul>
           </div>
-        </Link>
 
-        <div className="router-heading-names">
-          <Link to="/" className="link-item">
-            <p className="name">Home</p>
-          </Link>
-          <Link to="/jobs" className="link-item">
-            <p className="name">Jobs</p>
-          </Link>
-        </div>
-        <div className="logout-btn-container">
-          <button
-            type="button"
-            className="logout-button"
-            onClick={onClickLogout}
-          >
-            Logout
-          </button>
-        </div>
-        <div className="react-icons-container">
-          <Link to="/">
-            <IoIosHome className="icon" />
-          </Link>
-          <Link to="/jobs">
-            <MdMail className="icon" />
-          </Link>
+          <div className="nav-bar-large-container">
+            <Link to="/">
+              <img
+                className="website-logo"
+                src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+                alt="website logo"
+              />
+            </Link>
+            <ul className="nav-menu">
+              <li className="nav-menu-item">
+                <Link to="/" className="nav-link">
+                  Home
+                </Link>
+              </li>
 
-          <FiLogOut className="icon" onClick={onClickLogout} />
+              <li className="nav-menu-item">
+                <Link to="/jobs" className="nav-link">
+                  Jobs
+                </Link>
+              </li>
+            </ul>
+            <div className="large-device-button-container">
+              <button
+                type="button"
+                className="logout-desktop-btn"
+                onClick={onClickLogout}
+              >
+                Logout
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </navbar>
+      </nav>
+    </>
   )
 }
+
 export default withRouter(Header)
-// <ul>
-//   <li>hy</li>
-//   <li>hy</li>
-//   <li>hy</li>
-// </ul>
